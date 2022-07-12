@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "virtualMachines_pw_test_vm_name": {
-      "defaultValue": "pw-test-vm",
+      "defaultValue": "pw-test-vm1",
       "type": "String"
     },
     "storageAccounts_pwvmvhdrgdisks_name": {

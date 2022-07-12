@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "virtualMachines_pw_managed_vm_name": {
-      "defaultValue": "pw-managed-vm",
+      "defaultValue": "pw-managed-vm1",
       "type": "String"
     },
     "virtualNetworks_pw_vm_rg_vnet_name": {
