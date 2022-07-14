@@ -19,6 +19,70 @@
             "name": "[parameters('sites_pw_api_app_name')]",
             "location": "Central US",
             "kind": "api",
+            "resources": [
+                {
+                    "type": "config",
+                    "apiVersion": "2020-12-01",
+                    "name": "authsettingsV2",
+                    "location": "[resourceGroup().location]",
+                    "dependsOn": [
+                        "[concat('Microsoft.Web/sites/', parameters('sites_pw_api_app_name'))]"
+                    ],
+                    "properties": {
+                        "platform": {
+                            "enabled": true,
+                            "runtimeVersion": "~1"
+                        },
+                        "identityProviders": {
+                            "azureActiveDirectory": {
+                                "isAutoProvisioned": false,
+                                "registration": {
+                                    "clientId": "pratik",
+                                    "clientSecret": "pratik",
+                                    "openIdIssuer": "[concat('https://sts.windows.net/', 'qwer-1234-qwert', '/v2.0')]"
+                                },
+                                "validation": {
+                                    "allowedAudiences": [
+                                        "https://management.core.windows.net/"
+                                    ]
+                                }
+                            }
+                        },
+                        "login": {
+                            "routes": {},
+                            "tokenStore": {
+                                "enabled": true,
+                                "tokenRefreshExtensionHours": 72,
+                                "fileSystem": {},
+                                "azureBlobStorage": {}
+                            },
+                            "preserveUrlFragmentsForLogins": false,
+                            "allowedExternalRedirectUrls": [],
+                            "cookieExpiration": {
+                                "convention": "FixedTime",
+                                "timeToExpiration": "08:00:00"
+                            },
+                            "nonce": {
+                                "validateNonce": true,
+                                "nonceExpirationInterval": "00:05:00"
+                            }
+                        },
+                        "globalValidation": {
+                            "redirectToProvider": "azureactivedirectory",
+                            "unauthenticatedClientAction": "RedirectToLoginPage"
+                        },
+                        "httpSettings": {
+                            "requireHttps": true,
+                            "routes": {
+                                "apiPrefix": "/.auth"
+                            },
+                            "forwardProxy": {
+                                "convention": "NoProxy"
+                            }
+                        }
+                    }
+                }
+            ],
             "properties": {
                 "enabled": true,
                 "hostNameSslStates": [
