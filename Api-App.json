@@ -23,7 +23,7 @@
                 {
                     "type": "config",
                     "apiVersion": "2020-12-01",
-                    "name": "authsettingsV2",
+                    "name": "pw-func-app2/authsettingsV2",
                     "location": "[resourceGroup().location]",
                     "dependsOn": [
                         "[concat('Microsoft.Web/sites/', parameters('sites_pw_api_app_name'))]"
