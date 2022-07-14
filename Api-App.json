@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sites_pw_api_app_name": {
-            "defaultValue": "pw-api-app",
+            "defaultValue": "pw-api-app1",
             "type": "String"
         },
         "serverfarms_ASP_ajtest_8c13_externalid": {
