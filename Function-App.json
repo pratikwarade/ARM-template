@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sites_pw_func_app_name": {
-            "defaultValue": "pw-func-app3",
+            "defaultValue": "pw-func-app4",
             "type": "String"
         },
         "serverfarms_ASP_ajtest_8c13_externalid": {
@@ -23,7 +23,7 @@
                 {
                     "type": "config",
                     "apiVersion": "2020-12-01",
-                    "name": "pw-func-app2/authsettingsV2",
+                    "name": "pw-func-app4/authsettingsV2",
                     "location": "[resourceGroup().location]",
                     "dependsOn": [
                         "[concat('Microsoft.Web/sites/', parameters('sites_pw_api_app_name'))]"
