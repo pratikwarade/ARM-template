@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sites_pw_func_app_name": {
-            "defaultValue": "pw-func-app1",
+            "defaultValue": "pw-func-app2",
             "type": "String"
         },
         "serverfarms_ASP_ajtest_8c13_externalid": {
