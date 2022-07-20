@@ -262,7 +262,7 @@
             }
         },
         {
-            "name": "[parameters('virtualMachineName')]",
+            "name": "pw-vhd-vm",
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2022-03-01",
             "location": "[parameters('location')]",
@@ -391,7 +391,7 @@
         },
         {
             "type": "Microsoft.Compute/virtualMachines/extensions",
-            "name": "[concat(parameters('vmName'),'/diskEncryption')]",
+            "name": "[concat('pw-vhd-vm','/diskEncryption')]",
             "apiVersion": "2020-12-01",
             "dependsOn": [
                 "[resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName'))]"
